@@ -1,7 +1,5 @@
-from .main import main
+from . import main_cli
+
 
 if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        print("\rClosing...")
+    main_cli()
