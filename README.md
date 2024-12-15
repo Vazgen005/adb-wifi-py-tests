@@ -1,4 +1,4 @@
-# adb-wifi-py
+# [adb-wifi-py](https://github.com/Vazgen005/adb-wifi-py)
 
 `adb-wifi-py` is a tool for pairing Android 11 and newer devices for wireless debugging directly through a terminal using QR code.
 
@@ -6,7 +6,7 @@ It leverages the `python-zeroconf` library for multicast DNS service discovery a
 
 ## Installation
 
-To install `adb-wifi-py`, run the following command:
+To install `adb-wifi-py` from [PyPI](https://pypi.org/project/adb-wifi-py/), run the following command:
 
 ### pip
 
