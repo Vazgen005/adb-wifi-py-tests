@@ -10,9 +10,11 @@
 #   universal: false
 
 -e file:.
+colorama==0.4.6
+    # via adb-wifi-py
 ifaddr==0.2.0
     # via zeroconf
 qrcode==8.0
-    # via adb-wifi
+    # via adb-wifi-py
 zeroconf==0.136.2
-    # via adb-wifi
+    # via adb-wifi-py
