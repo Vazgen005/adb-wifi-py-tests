@@ -11,6 +11,7 @@ https://github.com/jstasiak/python-zeroconf
 import logging
 import subprocess
 from random import randint
+from shutil import which
 from sys import argv, exit
 
 from colorama import Fore, just_fix_windows_console
@@ -67,12 +68,18 @@ def main() -> None:
         format="%(asctime)s - %(levelname)s - %(message)s",
     )
 
+    if not which("adb"):
+        print(
+            f"{Fore.RED}[Error] adb not found in your PATH. Please ensure that adb is installed and added to your PATH.{Fore.RESET}",
+        )
+        exit(1)
+
     qr = QRCode()
     qr.add_data(FORMAT_QR.format(name=NAME, password=PASSWORD))
     qr.make(fit=True)
     qr.print_ascii(invert=True)
 
-    print(Fore.RED + "Scan QR-code to pair device." + Fore.RESET)
+    print(f"{Fore.YELLOW}Scan QR code to pair device.{Fore.RESET}")
     print(
         f"{Fore.CYAN}[System]{Fore.WHITE}->{Fore.CYAN}[Developer options]{Fore.WHITE}->{Fore.CYAN}[Wireless debugging]{Fore.WHITE}->{Fore.CYAN}[Pair device with QR code]{Fore.RESET}"
     )
